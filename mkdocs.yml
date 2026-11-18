@@ -1,0 +1,86 @@
+site_name: AI Engineering Handbook
+site_description: Learn to build, evaluate, and operate AI applications with Document Assistant.
+theme:
+  name: material
+  language: en
+  font: false
+  palette:
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.footer
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
+      restrict_base_path: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+validation:
+  nav:
+    omitted_files: warn
+  links:
+    anchors: warn
+nav:
+  - Home: index.md
+  - Roadmap: roadmap.md
+  - "I. Foundations":
+      - "Build a Python CLI": 01-foundations/python.md
+      - "From your shell to an HTTP request": 01-foundations/developer-tools.md
+      - "Make a model call": 01-foundations/first-model.md
+  - "II. Backend":
+      - "Expose a typed API": 02-backend/fastapi.md
+      - "Stream an answer": 02-backend/streaming.md
+      - "Keep state and enforce ownership": 02-backend/state.md
+  - "III. LLM engineering":
+      - "Budget tokens and build prompts": 03-llm-engineering/context.md
+      - "Validate model output and tool calls": 03-llm-engineering/structured-outputs.md
+      - "Choose a model and serving strategy": 03-llm-engineering/model-selection.md
+  - "IV. Retrieval-augmented generation":
+      - "Ingest documents and build chunks": 04-rag/ingestion.md
+      - "Search by keyword and meaning": 04-rag/retrieval.md
+      - "Cite sources and evaluate RAG": 04-rag/evaluation.md
+  - "V. Agents":
+      - "Build a deterministic tool workflow": 05-ai-agents/workflows.md
+      - "Bound agent runs and approve writes": 05-ai-agents/approvals.md
+      - "Evaluate and orchestrate agents": 05-ai-agents/orchestration.md
+  - "VI. Containers and Azure":
+      - "Package the API with Docker": 06-azure/containers.md
+      - "Map the application to Azure": 06-azure/architecture.md
+  - "VII. Delivery":
+      - "Describe infrastructure with Terraform": 07-devops/terraform.md
+      - "Test, promote and roll back releases": 07-devops/releases.md
+  - "VIII. Production AI":
+      - "Observe quality, latency and cost": 08-production-ai/observability.md
+      - "Measure performance and cache results": 08-production-ai/performance.md
+      - "Scale ingestion with queues and workers": 08-production-ai/ingestion-workers.md
+      - "Track model and prompt changes": 08-production-ai/model-lifecycle.md
+  - "IX. Capstone":
+      - "Review the production design": 09-capstone/design-review.md

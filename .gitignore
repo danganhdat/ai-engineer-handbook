@@ -1,0 +1,8 @@
+.venv/
+.handbook-deps/
+site/
+__pycache__/
+.pytest_cache/
+.env
+.env.*
+!.env.example
